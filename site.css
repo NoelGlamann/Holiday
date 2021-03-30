@@ -1,0 +1,46 @@
+/*  Noel Glamann
+    March 30, 2021
+    CSS for Holiday index.html
+*/
+
+body{
+    background: #BCD8B3;
+}
+
+img{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    transform: rotate(20deg)
+}
+
+.count{
+    display: block;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 10%;
+   
+
+    background: #35492F;
+}
+
+.count h1{
+    font-size: 200px;
+    font-family: 'Lobster', cursive;
+
+    text-align: center;
+    color: white;
+
+    margin: 0;
+    padding: 30px;
+}
+
+h2{
+    font-family: 'Dancing Script', cursive;
+    font-size: 80px;
+
+    text-align: center;
+
+    margin: 0;
+    padding: 30px;
+}

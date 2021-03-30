@@ -1,0 +1,139 @@
+<!--holiday.html
+	Noel Glamann
+	03/30/2021
+	
+	GitHub/JS Exam-->
+	
+<!DOCTYPE html>
+
+<html>
+	<head>
+        <title> Christmas Countdown </title>
+        <link rel="stylesheet" href="site.css">
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&display=swap" rel="stylesheet">
+    </head>
+
+	<body>  
+        <!-- I FOUND SNOW CODE ON WEBSITE: CREDIT - http://www.moonfruit.com/blog/creative/how-to-add-falling-snow-to-your-website/ -->
+        <div class="snow">
+            <style>
+                .editor-stage .snow {
+                height:50px;
+                background: #fff;
+                }
+                .snow{
+                position:fixed;
+                pointer-events:none;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                height:100vh;
+                background: none;
+                background-image: url('https://s3-eu-west-1.amazonaws.com/static-ressources/s1.png'), url('https://s3-eu-west-1.amazonaws.com/static-ressources/s2.png'), url('https://s3-eu-west-1.amazonaws.com/static-ressources/s3.png');
+                z-index:100;
+                -webkit-animation: snow 10s linear infinite;
+                -moz-animation: snow 10s linear infinite;
+                -ms-animation: snow 10s linear infinite;
+                animation: snow 10s linear infinite;
+                }
+                @keyframes snow {
+                0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+                50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+                100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+                }
+                @-moz-keyframes snow {
+                0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+                50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+                100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+                }
+                @-webkit-keyframes snow {
+                0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+                50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+                100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+                }
+                @-ms-keyframes snow {
+                0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+                50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+                100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+                }
+            </style>
+
+
+
+            <img src="hat.png" height="200">
+            <div class="count">
+                <h1 id="nums">#</h1>
+                <h2>Days until Christmas</h2>
+            </div>
+        </div>
+
+        <script>
+            //gets today's date
+            var today = new Date();
+
+            //gets month num
+            var month = today.getMonth() + 1;
+
+            //This section find which month it is
+            //and calculates the day of the year. 
+            var days = 0;
+            var countdown = 0;
+            if (month == 1){
+                days = today.getDate();
+                countdown = 359-days;
+            } else if (month == 2) {
+                days = 31 + today.getDate();
+                countdown = 359-days;
+            } else if (month == 3) {
+                days = 59 + today.getDate();
+                countdown = 359-days;
+            } else if (month == 4) {
+                days = 90 + today.getDate();
+                countdown = 359-days;
+            } else if (month == 5) {
+                days = 120 + today.getDate();
+                countdown = 359-days;
+            } else if (month == 6) {
+                days = 151 + today.getDate();
+                countdown = 359-days;
+            } else if (month == 7) {
+                days = 181 + today.getDate();
+                countdown = 359-days;
+            } else if (month == 8) {
+                days = 212 + today.getDate();
+                countdown = 359-days;
+            } else if (month == 9) {
+                days = 243 + today.getDate();
+                countdown = 359-days;
+            } else if (month == 10) {
+                days = 273 + today.getDate();
+                countdown = 359-days;
+            } else if (month == 11) {
+                days = 303 + today.getDate();
+                countdown = 359-days;
+
+            } else if (month == 12) {
+                current = new Date();
+                decDay = current.getDate();
+
+                if (decDay < 25) {
+                    days = 334 + decDay;
+                    countdown = 359-days;
+                } else if (decDay = 25){
+                    countdown = 0
+                } else if (decDay > 25){
+                    days = 365-(decDay-25);
+                    countdown = 365 - days;
+                }
+            }
+
+            document.getElementById("nums").innerHTML = countdown;
+        </script>
+
+	</body>
+
+</html>
